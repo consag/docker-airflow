@@ -1,5 +1,4 @@
 # docker-airflow-informatica
-[![CircleCI](https://circleci.com/gh/jactools/docker-airflow-informatica/tree/master.svg?style=svg)](https://circleci.com/gh/jactools/docker-airflow-informatica/tree/master)
 [![Docker Build Status](https://img.shields.io/docker/build/jactools/docker-airflow-informatica.svg)]()
 
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/jactools/docker-airflow-informatica/)
