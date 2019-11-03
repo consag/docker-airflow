@@ -1,5 +1,5 @@
 # docker-airflow-informatica
-[![Docker Build Status](https://img.shields.io/docker/build/jactools/docker-airflow-informatica.svg)]()
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/jactools/docker-airflow-informatica.svg)]()
 
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/jactools/docker-airflow-informatica/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/jactools/docker-airflow-informatica.svg)]()
