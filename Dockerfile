@@ -8,13 +8,6 @@
 FROM centos:7.5.1804 
 LABEL maintainer="JacTools"
 
-## Informatica
-
-# copy installers
-#COPY script/infacmd.sh /appl/informatica/current/server/bin/
-#COPY software/shared/ /infacmd/shared/
-#COPY software/PowerCenter /infacmd/PowerCenter
-
 ## Airflow
 # roughly copied from puckel/docker-airflow
 # Never prompts the user for choices on installation/configuration of packages
@@ -136,7 +129,16 @@ COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 COPY dags/ ${AIRFLOW_USER_HOME}/dags/
 COPY plugins/ ${AIRFLOW_USER_HOME}/plugins/
 
-RUN chown -R airflow: ${AIRFLOW_USER_HOME}
+# copy installers
+COPY script/infacmd.sh /appl/informatica/current/server/bin/
+# infacmd.sh will be in /appl/software/PowerCenter/server/bin
+COPY software/ /appl/software/
+
+RUN chown -R airflow: ${AIRFLOW_USER_HOME} 
+RUN chown -R airflow: /appl
+
+COPY config/domains.infa ${AIRFLOW_USER_HOME}/domains.infa
+ENV INFA_DOMAINS_FILE=${AIRFLOW_USER_HOME}/domains.infa
 
 EXPOSE 8080 5555 8793
 
