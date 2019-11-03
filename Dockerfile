@@ -10,7 +10,6 @@ LABEL maintainer="JacTools"
 
 USER root
 COPY script/infacmd.sh /appl/informatica/current/server/bin/
-COPY dags dags
 COPY requirements.txt /requirements.txt
 RUN set -ex \
     && pip install -r /requirements.txt 
