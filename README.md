@@ -1,10 +1,10 @@
-# docker-airflow
-[![CircleCI](https://circleci.com/gh/puckel/docker-airflow/tree/master.svg?style=svg)](https://circleci.com/gh/puckel/docker-airflow/tree/master)
-[![Docker Build Status](https://img.shields.io/docker/build/puckel/docker-airflow.svg)]()
+# docker-airflow-informatica
+[![CircleCI](https://circleci.com/gh/jactools/docker-airflow-informatica/tree/master.svg?style=svg)](https://circleci.com/gh/jactools/docker-airflow-informatica/tree/master)
+[![Docker Build Status](https://img.shields.io/docker/build/jactools/docker-airflow-informatica.svg)]()
 
-[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/puckel/docker-airflow/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/puckel/docker-airflow.svg)]()
-[![Docker Stars](https://img.shields.io/docker/stars/puckel/docker-airflow.svg)]()
+[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/jactools/docker-airflow-informatica/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/jactools/docker-airflow-informatica.svg)]()
+[![Docker Stars](https://img.shields.io/docker/stars/jactools/docker-airflow-informatica.svg)]()
 
 This repository contains **Dockerfile** of [apache-airflow](https://github.com/apache/incubator-airflow) based on [puckel/docker-airflow](https://hub.docker.com/r/puckel/docker-airflow)'s image.
 
