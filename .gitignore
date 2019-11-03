@@ -24,3 +24,11 @@ sftp-config.json
 
 # Python
 __pycache__
+
+# various
+dist/
+build/
+temp/
+software/
+logs/
+
