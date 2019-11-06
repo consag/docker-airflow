@@ -1,4 +1,4 @@
-# VERSION 0.0.1 
+# VERSION 0.1.0 
 # AUTHOR: Jac. "Tools" Beekers
 # DESCRIPTION: Airflow with Informatica command line utilities on Centos
 # BUILD: docker build --rm -t jactools/docker-aiflow-scheduler .
