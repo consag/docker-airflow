@@ -129,8 +129,11 @@ COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 COPY dags/ ${AIRFLOW_USER_HOME}/dags/
 COPY plugins/ ${AIRFLOW_USER_HOME}/plugins/
 
-# copy installers
+# copy dummy infacmd script
 COPY script/infacmd.sh /appl/informatica/current/server/bin/
+COPY script/infacmd.sh /appl/software/informatica/PowerCenter/server/bin/
+
+# copy installers
 # infacmd.sh will be in /appl/software/PowerCenter/server/bin
 COPY software/ /appl/software/
 
