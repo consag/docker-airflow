@@ -29,6 +29,5 @@ __pycache__
 dist/
 build/
 temp/
-software/
 logs/
 
