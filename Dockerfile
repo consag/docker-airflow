@@ -77,7 +77,8 @@ RUN set -ex \
     && yum groups mark convert 'Development Tools' \
     && yum groupinstall -y 'Development Tools' \
     && yum install -y 'mysql-community-devel' \
-        mysql-community-client
+    && yum install -y 'mysql-community-client' \
+    && yum install -y 'nmap-ncat'
 
 # centos docker does not include localedef, need it.
 RUN set -ex \
