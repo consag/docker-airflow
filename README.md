@@ -20,9 +20,20 @@ Pull the image from the Docker repository.
     docker pull jactools/docker-airflow-informatica
 
 ## Build
+### without Informatica command line utilities
 
-    docker build -t jactools/docker-airflow-informatica .
-
+    docker build -t jactools/docker-airflow-informatica:no_infa .
+    
+### with Informatica command line utilities
+    Copy the extracted Informatica command line utilities directory into software/, so the directory structure looks like this (for Informatica 10.2.2)
+    software/informatica
+    software/informatica/PowerCenter
+    software/informatica/shared
+    ...
+    
+    then:
+    docker build -t jactools/docker-airflow-informatica:infa1022 .
+    
 ## Usage
 
 Please check the usage note at [puckel/docker-airflow](https://github.com/puckel/docker-airflow)
@@ -30,11 +41,18 @@ Please check the usage note at [puckel/docker-airflow](https://github.com/puckel
 For example:
     docker run -d --name airflow -p 8080:8080 jactools/docker-airflow-informatica webserver
 
-To stop the container:
+To stop/start the container:
     docker stop airflow
+    docker start airflow
 
-To remove it (before you can start it again)
+To remove it
     docker rm airflow
+
+## Run postgres with airflow in two docker containers using docker-compose 
+Without installed Informatica command line utilities:
+    docker-compose docker-compose-LocalExecutor-noinfa.yml up
+With 10.2.2 installed Informatica command line utilities:
+    docker-compose docker-compose-LocalExecutor-infa1022.yml up
 
 ## UI Links
 
@@ -46,12 +64,12 @@ To remove it (before you can start it again)
 
 If you want to run other airflow sub-commands, such as `list_dags` or `clear` you can do so like this:
 
-    docker run --rm -ti puckel/docker-airflow airflow list_dags
+    docker run --rm -ti puckel/docker-airflow-informatica airflow list_dags
 
 You can also use this to run a bash shell or any other command in the same environment that airflow would be run in:
 
-    docker run --rm -ti puckel/docker-airflow bash
-    docker run --rm -ti puckel/docker-airflow ipython
+    docker run --rm -ti puckel/docker-airflow-informatica bash
+    docker run --rm -ti puckel/docker-airflow-informatica ipython
 
 # Wanna help?
 
