@@ -1,10 +1,10 @@
 """
- Definition to run a test mapping
+ Definition to run a test scorecard
 """
 
 from datetime import datetime, timedelta
 from airflow import DAG
-from InformaticaPlugin import ExecuteMapping
+from InformaticaPlugin import ExecuteScorecard
 
 schedule_interval = None
 
@@ -19,15 +19,14 @@ default_args = {
 }
 
 dag = DAG(
-    'run_testmapping',
+    'run_testscorecard',
     start_date=datetime(2019, 11, 1),
     schedule_interval=schedule_interval,
     default_args=default_args)
 
-mapping = ExecuteMapping(
-    task_id = "task_testmapping",
-    application_name ="APP_TestScheduler",
-    mapping_name = "m_SchedulerTest1",
+scorecard = ExecuteScorecard(
+    task_id = "task_testscorecard",
+    scorecard_path = "/SchedulerDemo/sc_SchedulerTest1",
     dag=dag
 )
 
